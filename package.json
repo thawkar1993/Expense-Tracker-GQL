@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "type":"module",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.11.3",
