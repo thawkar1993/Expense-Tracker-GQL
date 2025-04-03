@@ -21,8 +21,21 @@
 
 # What are typeDefs? (or Type definitions)
 
--   Type definitions define the shape of the data available in the GraphQL API. They specify the types of objects
-    that can be queried and the relationships between them.
+-   Type definitions define the shape/Structure of the data available in the GraphQL API. 
+    They specify the types of objects that can be queried and the relationships between them.
+    It specifies the types, queries, mutations, and subscriptions that your API supports.
+
+# Why Use typeDefs?
+
+-   Defines the schema structure.
+-   Acts as a contract between frontend and backend.
+-   Helps in validating API requests.
+
+# Types of operations in Graphql:
+
+- Queries – Used for fetching (reading) data. GET method is used.
+- Mutations – Used for modifying (creating, updating, deleting) data. (POST, PUT, DELETE methods are used).
+- Subscriptions - Used for Real-time updates. Uses WebSockets instead of HTTP
 
 # What are resolvers?
 

@@ -4,8 +4,10 @@ import { GraphQLLocalStrategy } from "graphql-passport";
 
 import User from "../models/user.model.js";
 
+//Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application
 
 export const configurePassport = async () => {
+    //Serialization: It is process of converting the user object into a format that can be stored and retrieved easily.
     passport.serializeUser((user, done) => {
         console.log("Serializing user...");
         done(null, user.id);

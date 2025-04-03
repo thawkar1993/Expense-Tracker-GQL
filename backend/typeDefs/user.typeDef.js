@@ -10,7 +10,7 @@ const userTypeDef = `#graphql
 
     #special type - this will tell our schemas what type of queries we could have for users 
     type Query { 
-        users: [User!] #fetch all users - in response array of users.
+        #users: [User!] #fetch all users - in response array of users.
         authUser: User # user after authenticate  if not then null, so not required
         user(userId:ID!): User #fetch user based on id
     }
