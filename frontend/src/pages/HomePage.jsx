@@ -1,10 +1,13 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import toast from 'react-hot-toast';
+import { useMutation } from "@apollo/client";
 
 import Cards from "../components/ui/molecules/Cards";
 import TransactionForm from "../components/ui/TransactionForm";
 
 import { MdLogout } from "react-icons/md";
+import { LOGOUT } from "../graphql/mutations/user.mutation";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -25,11 +28,20 @@ const HomePage = () => {
 		],
 	};
 
-	const handleLogout = () => {
-		console.log("Logging out...");
-	};
+	const [ logout , { loading }] = useMutation( LOGOUT, { refetchQueries: ['GetAuthenticatedUser']});
 
-	const loading = false;
+	const handleLogout = async () => {
+		console.log("Logging out...");
+		try{
+			await logout();
+			/*
+				Clear the Apollo Client Cache FROM THE DOCS
+			*/
+		}catch(error){
+			console.error("Error",error.message);
+			toast.error(error.message);
+		}
+	};
 
 	return (
 		<>
@@ -39,11 +51,11 @@ const HomePage = () => {
 						Spend wisely, track wisely
 					</p>
 					<img
-						src={"https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
+						src={"./UserProfile.png"}
 						className='w-11 h-11 rounded-full border cursor-pointer'
 						alt='Avatar'
 					/>
-					{!loading && <MdLogout className='mx-2 w-5 h-5 cursor-pointer' onClick={handleLogout} />}
+					{!loading && <MdLogout className='mx-2 w-5 h-5 cursor-pointer text-gray-100' onClick={handleLogout} />}
 					{/* loading spinner */}
 					{loading && <div className='w-6 h-6 border-t-2 border-b-2 mx-2 rounded-full animate-spin'></div>}
 				</div>

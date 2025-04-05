@@ -47,7 +47,7 @@ const Card = ({ cardType }) => {
 				<div className='flex justify-between items-center'>
 					<p className='text-xs text-black font-bold'>21 Sep, 2001</p>
 					<img
-						src={"https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
+						src={"./UserProfile.png"}
 						className='h-8 w-8 border rounded-full'
 						alt=''
 					/>
