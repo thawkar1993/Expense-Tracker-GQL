@@ -70,7 +70,7 @@ await server.start();
 app.use(
   '/graphql',
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://vercel.com/anants-projects-969ccd3f/expense-tracker-gql-jdbq",
     credentials: true,
   }),
   express.json(),
