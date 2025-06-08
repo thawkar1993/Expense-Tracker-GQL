@@ -28,10 +28,9 @@ const TransactionPage = () => {
 			await updateTransaction({ 
 				variables: {
 					input: { 
+						...formData,
+						amount: amount,
 						transactionId: id,
-						...formData, 
-						amount,
-						
 					}
 				}
 			})

@@ -6,6 +6,7 @@ const userTypeDef = `#graphql
         password: String!
         profilePicture: String
         gender: String! 
+        transactions: [Transaction!]
     }
 
     #special type - this will tell our schemas what type of queries we could have for users 

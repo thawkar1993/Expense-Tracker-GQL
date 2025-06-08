@@ -4,7 +4,7 @@ import { CREATE_TRANSACTION } from "../../graphql/mutations/transaction.mutation
 
 const TransactionForm = () => {
 	//TODO - When Relationships are added, we need to change the query a bit.
-	const [ createTransaction, { loading } ] = useMutation(CREATE_TRANSACTION, { refetchQueries: ['GetTransactions']})
+	const [ createTransaction, { loading } ] = useMutation(CREATE_TRANSACTION, { refetchQueries: ['GetTransactions', 'GetTransactionStatistics']})
 	
 	const handleSubmit = async (e) => {
 		e.preventDefault();
